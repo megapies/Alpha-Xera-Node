@@ -4,7 +4,7 @@ require("dotenv").config();
 const port = process.env.PORT || 4000;
 
 app.post('/webhook', function(req, res){
-    res.sentStatus(200);
+    res.sendStatus(200);
 });
 
 app.get("/", function(req, res){
@@ -12,4 +12,6 @@ app.get("/", function(req, res){
 })
 
 
-app.listen(port);
+app.listen(port, function(){
+    console.log("running at port", port);
+});
