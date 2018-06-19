@@ -4,6 +4,7 @@ require("dotenv").config();
 const port = process.env.PORT || 4000;
 
 app.post('/webhook', function(req, res){
+    console.log(req);
     res.sendStatus(200);
 });
 
