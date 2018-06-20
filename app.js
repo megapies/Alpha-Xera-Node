@@ -12,10 +12,8 @@ app.use(bodyParser.json())
 
 app.post('/webhook', function(req, res){
     console.log(req.body);
-    console.log(req.body.events);
-    console.log(typeof req.body.events);
     let reply_token = req.body.events[0].replyToken;
-    let msg = req.body.event[0].message.text;
+    let msg = req.body.events[0].message.text;
     echoMsg(reply_token, msg);
     res.sendStatus(200);
 });
