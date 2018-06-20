@@ -11,10 +11,11 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 app.post('/webhook', function(req, res){
+    console.log(req.body);
     let reply_token = req.body.events[0].replyToken;
     let msg = req.body.event[0].message.text;
     echoMsg(reply_token, msg);
-    console.log(req.body);
+    
     res.sendStatus(200);
 });
 
