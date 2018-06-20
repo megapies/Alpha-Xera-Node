@@ -1,16 +1,47 @@
 const express = require("express");
 const app = express();
+const rp = require('request-promise');
 require("dotenv").config();
 const port = process.env.PORT || 4000;
 
 app.post('/webhook', function(req, res){
-    console.log(req);
+    let reply_token = req.body.events[0].replyToken;
+    let msg = req.body.event[0].message.text;
+    echoMsg(reply_token, msg);
+    console.log(req.body);
     res.sendStatus(200);
 });
 
 app.get("/", function(req, res){
     res.end("Hello, I'm Xera.")
 })
+
+async function echoMsg(reply_token, msg){
+    const options = {
+        method: 'POST',
+        url: 'https://api.line.me/v2/bot/message/reply',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer N5/pvsQEdNTKM6aMP9IuZ2X2f3gIVSokI31lzGFBH8ommp9hY4tfJGQfhqzNjE+58R+ycMNxqDZpJB4KGXMPDsZnxREe4Q5DFrpjbfbY9L18VcmDqh6X31jbEBDLE5oUEXoHEwAhYN51ZLlTvVDZLAdB04t89/1O/w1cDnyilFU='
+        },
+        body: {
+            replyToken: reply_token,
+            messages: [{
+                type: 'text',
+                text: msg + ", sir"
+            }]
+        },
+        json: true
+    };
+
+    try{
+        const res = await rp(options);
+        console.log("reply message with status", res.statusCode);
+    }catch(error){
+        console.log("reply message with status", res.statusCode);
+    }
+
+}
 
 
 app.listen(port, function(){
