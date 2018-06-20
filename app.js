@@ -1,8 +1,14 @@
 const express = require("express");
 const app = express();
 const rp = require('request-promise');
+const bodyParser = require("body-parser");
 require("dotenv").config();
 const port = process.env.PORT || 4000;
+
+app.use(bodyParser.urlencoded({
+    extended: false
+}))
+app.use(bodyParser.json())
 
 app.post('/webhook', function(req, res){
     let reply_token = req.body.events[0].replyToken;
