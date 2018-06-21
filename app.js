@@ -13,6 +13,7 @@ app.use(bodyParser.json())
 app.post('/webhook', function(req, res){
     console.log(req.body);
     console.log("message-->", req.body.events[0].message)
+    console.log("source-->", req.body.events[0].source)
     let reply_token = req.body.events[0].replyToken;
     let msg = req.body.events[0].message.text;
     echoMsg(reply_token, msg);
