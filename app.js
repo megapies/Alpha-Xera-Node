@@ -16,18 +16,38 @@ app.post('/webhook', function(req, res){
     console.log("source-->", req.body.events[0].source)
     let reply_token = req.body.events[0].replyToken;
     let msg = req.body.events[0].message.text;
+    let source = req.body.events[0].source;
 
-    // if(!!msg && msg === 'Zera, Sayonara'){
-
-    // }else{
-    //     echoMsg(reply_token, msg);
-    // }
+    if(!!msg && source.type === 'group' && msg === 'Zera, Sayonara'){
+        leaveGroup(reply_token, source.groupId)
+    }else{
+        echoMsg(reply_token, msg);
+    }
     res.sendStatus(200);
 });
 
 app.get("/", function(req, res){
     res.end("Hello, I'm Xera.")
 })
+
+async function leaveGroup(reply_token,group_id){
+    try{
+        await echoMsg(reply_token, "ลาก่อนค่ะ");
+        const options = {
+            method: 'POST',
+            url: `https://api.line.me/v2/bot/group/${group_id}/leave`,
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer N5/pvsQEdNTKM6aMP9IuZ2X2f3gIVSokI31lzGFBH8ommp9hY4tfJGQfhqzNjE+58R+ycMNxqDZpJB4KGXMPDsZnxREe4Q5DFrpjbfbY9L18VcmDqh6X31jbEBDLE5oUEXoHEwAhYN51ZLlTvVDZLAdB04t89/1O/w1cDnyilFU='
+            },
+            json: true
+        };
+        const res = await rp(options);
+        console.log("reply message with status", res.statusCode);
+    }catch(error){
+        console.log("reply message with status", res.statusCode);
+    }
+}
 
 async function echoMsg(reply_token, msg){
     const options = {
