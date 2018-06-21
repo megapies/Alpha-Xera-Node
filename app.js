@@ -16,7 +16,12 @@ app.post('/webhook', function(req, res){
     console.log("source-->", req.body.events[0].source)
     let reply_token = req.body.events[0].replyToken;
     let msg = req.body.events[0].message.text;
-    echoMsg(reply_token, msg);
+
+    // if(!!msg && msg === 'Zera, Sayonara'){
+
+    // }else{
+    //     echoMsg(reply_token, msg);
+    // }
     res.sendStatus(200);
 });
 
