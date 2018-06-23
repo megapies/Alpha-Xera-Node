@@ -53,16 +53,16 @@ class MorningCammander{
 
       this.replyMessage(
         event.replyToken,
-        `อรุณสวัสดิ์ค่ะ
-        สภาพอากาศวันนี้${sumWeather}
-        อุณหภูมิสูงสุด ${highTemp} °C
-        อุณหภูมิต่ำสุด ${lowTemp} °C`
+`อรุณสวัสดิ์ค่ะ
+สภาพอากาศวันนี้${sumWeather}
+อุณหภูมิสูงสุด ${highTemp} °C
+อุณหภูมิต่ำสุด ${lowTemp} °C`
       )
-      // console.log(
-      //   `อรุณสวัสดิ์ค่ะ
-      // สภาพอากาศวันนี้${sumWeather}
-      // อุณหภูมิสูงสุด ${highTemp} °C
-      // อุณหภูมิต่ำสุด ${lowTemp} °C`)
+//       console.log(
+//         `อรุณสวัสดิ์ค่ะ
+// สภาพอากาศวันนี้${sumWeather}
+// อุณหภูมิสูงสุด ${highTemp} °C
+// อุณหภูมิต่ำสุด ${lowTemp} °C`)
     }catch(error){
       console.log('weather error', error)
     }
