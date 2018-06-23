@@ -29,13 +29,14 @@ app.post('/webhook', function (req, res) {
       }
     })
   }
-  // let reply_token = req.body.events[0].replyToken;
-  // let msg = req.body.events[0].message.text;
-  // let source = req.body.events[0].source;
+  let reply_token = req.body.events[0].replyToken;
+  let msg = req.body.events[0].message.text;
+  let source = req.body.events[0].source;
 
-  // if(!!msg && source.type === 'group' && msg === 'Zera, Sayonara'){
-  //     leaveGroup(reply_token, source.groupId)
-  // }else{
+  if(!!msg && source.type === 'group' && msg === 'Zera, Sayonara'){
+      leaveGroup(reply_token, source.groupId)
+  }
+  // else{
   //     echoMsg(reply_token, msg);
   // }
   res.sendStatus(200);
