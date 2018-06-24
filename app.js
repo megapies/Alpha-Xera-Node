@@ -93,7 +93,6 @@ async function echoMsg(reply_token, msg) {
   } catch (error) {
     console.log("reply message with status", res.statusCode);
   }
-
 }
 
 

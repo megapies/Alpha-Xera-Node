@@ -1,5 +1,5 @@
 const rp = require('request-promise')
-
+const Replyer = require('../helpers/replyer')
 const command = /morning|^mn$|อรุณสวัส/
 class MorningCammander{
   name(){
@@ -50,50 +50,16 @@ class MorningCammander{
       console.log('high temp', highTemp)
       console.log('low temp', lowTemp)
       console.log('icon', icon)
-
-      this.replyMessage(
-        event.replyToken,
+      const reply_message = 
 `อรุณสวัสดิ์ค่ะ
 สภาพอากาศวันนี้${sumWeather}
 อุณหภูมิสูงสุด ${highTemp} °C
 อุณหภูมิต่ำสุด ${lowTemp} °C`
-      )
-//       console.log(
-//         `อรุณสวัสดิ์ค่ะ
-// สภาพอากาศวันนี้${sumWeather}
-// อุณหภูมิสูงสุด ${highTemp} °C
-// อุณหภูมิต่ำสุด ${lowTemp} °C`)
+      Replyer.replyMessage(event.replyToken, reply_message)
+      
     }catch(error){
       console.log('weather error', error)
     }
-  }
-
-
-  async replyMessage(reply_token, msg) {
-    const options = {
-      method: 'POST',
-      url: 'https://api.line.me/v2/bot/message/reply',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer N5/pvsQEdNTKM6aMP9IuZ2X2f3gIVSokI31lzGFBH8ommp9hY4tfJGQfhqzNjE+58R+ycMNxqDZpJB4KGXMPDsZnxREe4Q5DFrpjbfbY9L18VcmDqh6X31jbEBDLE5oUEXoHEwAhYN51ZLlTvVDZLAdB04t89/1O/w1cDnyilFU='
-      },
-      body: {
-        replyToken: reply_token,
-        messages: [{
-          type: 'text',
-          text: msg
-        }]
-      },
-      json: true
-    };
-  
-    try {
-      const res = await rp(options);
-      console.log("reply message with status", res.statusCode);
-    } catch (error) {
-      console.log("reply message with status", res.statusCode);
-    }
-  
   }
 }
 
