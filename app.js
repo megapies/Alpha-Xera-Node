@@ -15,6 +15,7 @@ app.use(bodyParser.json())
 
 app.post('/webhook', function (req, res) {
   console.log(req.body.events)
+  console.log('hello github')
   const event = req.body.events[0]
   const event_type = event.type
   console.log(req.body);
