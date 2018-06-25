@@ -1,5 +1,5 @@
 const Replyer = require('../helpers/replyer')
-const command = /^[xX][eE][rR][aA]$|^[hH][eE][lL][lL][oO]$|^Hello, Xera$|^สวัสดี$/
+const command = /^[xX][eE][rR][aA]$|^[hH][eE][lL][lL][oO]$|^เซร่าๆ*$|^Hello, Xera$|^สวัสดี$/
 
 class HelloCommander{
   
