@@ -22,7 +22,8 @@ class MessageReplyer {
       const res = await rp(options);
       console.log("reply message with status", res.statusCode);
     } catch (error) {
-      console.log("reply message with status", res.statusCode);
+      console.log("reply error with status", error.statusCode);
+      console.log(error)
     }
   }
 }
