@@ -1,11 +1,11 @@
-const COMMAND = /[xX][eE][rR][aA], *sayonara/
+const command = /[xX][eE][rR][aA], *sayonara/
 class LeaveGroupCammander{
   
   name(){
     return 'Leave Group'
   }
   checkMessage(msg){
-    return COMMAND.test(msg)
+    return command.test(msg)
   }
 
   perform(event){
