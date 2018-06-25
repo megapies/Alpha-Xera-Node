@@ -1,4 +1,4 @@
-const Replyer = require('../helper/replyer')
+const Replyer = require('../helpers/replyer')
 const command = /หิว/
 
 class HungryCommander{
