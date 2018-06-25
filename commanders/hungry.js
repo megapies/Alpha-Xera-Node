@@ -1,7 +1,7 @@
 const Replyer = require('../helper/replyer')
 const command = /หิว/
 
-class HungryCammander{
+class HungryCommander{
   
   name(){
     return 'Hungry'
@@ -20,5 +20,5 @@ class HungryCammander{
 
 module.exports = {
   staticClass: HungryCommander,
-  commander: new HungryCammander(),
+  commander: new HungryCommander(),
 }
