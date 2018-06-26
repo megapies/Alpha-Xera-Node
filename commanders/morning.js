@@ -1,6 +1,6 @@
 const rp = require('request-promise')
 const Replyer = require('../helpers/replyer')
-const command = /morning|^mn$|อรุณสวัส/
+const command = /morning|^mn$|อรุณสวัส|[xX]era forecast/
 class MorningCammander{
   name(){
     return 'Morning'
