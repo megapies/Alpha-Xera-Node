@@ -34,7 +34,7 @@ class HungryCommander{
 
   async perform(event){
     const replyToken = event.replyToken
-    const food = this.foods[Math.floor(Math.random() * this.foods.length))]
+    const food = this.foods[Math.floor(Math.random() * this.foods.length)]
     const msg = `วันนี้กิน${food}ดีมั๊ยคะ`
     await Replyer.replyMessage(replyToken, msg)
   }
