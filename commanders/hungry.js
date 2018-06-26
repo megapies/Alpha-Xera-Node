@@ -13,7 +13,7 @@ class HungryCommander{
   async perform(event){
     const replyToken = event.replyToken
     const food = 'ผัดกระเพรา'
-    const msg = `วันนี่กิน${food}ดีมั๊ยคะ`
+    const msg = `วันนี้กิน${food}ดีมั๊ยคะ`
     await Replyer.replyMessage(replyToken, msg)
   }
 }
