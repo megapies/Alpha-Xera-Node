@@ -20,7 +20,7 @@ class GoodNightCommander{
 
   async perform(event){
     const replyToken = event.replyToken
-    const msg = this.msgs[Math.floor(Math.random() * this.foods.length)]
+    const msg = this.msgs[Math.floor(Math.random() * this.msgs.length)]
     await Replyer.replyMessage(replyToken, msg)
   }
 }
