@@ -15,7 +15,7 @@ class LeafletCommander{
     // const food = 'ผัดกระเพรา'
     const msg = 
     `นี้ค่ะใบลา
-    http://ms.src.ku.ac.th/manual/document/ใบลา.pdf`
+http://ms.src.ku.ac.th/manual/document/ใบลา.pdf`
     await Replyer.replyMessage(replyToken, msg)
   }
 }
