@@ -1,5 +1,5 @@
 const Replyer = require('../helpers/replyer')
-const command = /ท้อ|เหนื่อย/
+const command = /ท้อ|เหนื่อย|ขอกำลังใจ/
 const anti_command = /อย่า|ไม่|ท้อง/
 class FightingCommander{
   
