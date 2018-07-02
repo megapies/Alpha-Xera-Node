@@ -1,5 +1,5 @@
 const Replyer = require('../helpers/replyer')
-const command = /อีร่า/
+const command = /อี *ร่ *า/
 const anti_command = /^$/
 class AntiEraCommander{
   
