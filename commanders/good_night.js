@@ -1,5 +1,5 @@
 const Replyer = require('../helpers/replyer')
-const command = /ง่วง|นอน|ฝันดี|^gn$|^good *night$/
+const command = /ง่วง|ฝันดี|^gn$|^good *night$/
 const anti_command = /เมื่อคืน/
 class GoodNightCommander{
 	
