@@ -35,7 +35,7 @@ class FightingCommander{
     let inQuote = false
     let quote = ''
     for(let c of message){
-      if(c === ' ' && !inQuote){
+      if(c === ' ' && !inQuote && quote !== ''){
         if(token.command === null)
           token.command = buffer
         else if(buffer[0] === '-')
