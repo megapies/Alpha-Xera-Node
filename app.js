@@ -22,7 +22,6 @@ app.post('/webhook', function (req, res) {
   console.log(req.body);
   console.log("message-->", req.body.events[0].message)
   console.log("source-->", req.body.events[0].source)
-  console.log('env', process.env.LINE_BOT_API)
   if (event_type === 'message') {
     const msg = event.message.text
     commanders.forEach(commander => {
