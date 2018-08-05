@@ -4,7 +4,9 @@ class EchoConsoler{
     event,
     token
   }){
-    await Replyer.replyMessage(event.replyToken, event.message.text)
+    console.log(event)
+    console.log(event.replyToken)
+    // await Replyer.replyMessage(event.replyToken, event.message.text)
   }
 }
 
