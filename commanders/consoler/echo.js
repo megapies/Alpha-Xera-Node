@@ -2,7 +2,9 @@ class EchoConsoler{
   echo({
     message,
     source
-  })
+  }){
+    
+  }
 }
 
 module.exports = {
