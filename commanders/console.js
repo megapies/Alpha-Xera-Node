@@ -14,7 +14,8 @@ class FightingCommander{
     const replyToken = event.replyToken
     // const food = 'ผัดกระเพรา'
     const msg = `xera operation complete`
-    const token = this.tokenize(event.message)
+    console.log('event.message', event.message)
+    const token = this.tokenize(event.message.text)
     console.log(token)
     await Replyer.replyMessage(replyToken, msg)
   }
