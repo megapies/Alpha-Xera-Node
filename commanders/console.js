@@ -21,7 +21,7 @@ class FightingCommander{
   }
 
   tokenize(message){
-    message = message.slice(5, message.length)
+    message = message.slice(5, message.length) + ' '
     const token = {
       command: null,
       flags: [
