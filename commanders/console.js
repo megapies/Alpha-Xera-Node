@@ -16,7 +16,7 @@ class FightingCommander{
     // const food = 'ผัดกระเพรา'
     const msg = `xera operation complete`
     const token = this.tokenize(event.message.text)
-    await Replyer.replyMessage(replyToken, msg)
+    // await Replyer.replyMessage(replyToken, msg)
     if(consolers[token.command])
       await consolers[token.command].operate({
         event,
