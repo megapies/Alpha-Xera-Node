@@ -1,4 +1,4 @@
-const Replyer = require('../helpers/replyer')
+const Replyer = require('/helpers/replyer')
 class EchoConsoler{
   async operate({
     event,
