@@ -17,7 +17,7 @@ class FightingCommander{
     const msg = `xera operation complete`
     const token = this.tokenize(event.message.text)
     await Replyer.replyMessage(replyToken, msg)
-    if(consoler[token.command])
+    if(consolers[token.command])
       await consolers[token.command].operate({
         event,
         token
