@@ -44,7 +44,7 @@ class FightingCommander{
           token.params.push(buffer)
         buffer = ''
       }
-      else if((c === '\"' || c === '\'') && c !== quote){
+      else if((c === '\"' || c === '\'') && c === quote){
         console.log('**quote**', inQuote, quote)
         if(inQuote)
           token.params.push(buffer)
