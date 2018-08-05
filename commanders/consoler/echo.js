@@ -6,7 +6,9 @@ class EchoConsoler{
   }){
     console.log(event)
     console.log(event.replyToken)
-    await Replyer.replyMessage(event.replyToken, event.message.text)
+    const replyToken = event.replyToken
+    const msg = token.params[0]
+    await Replyer.replyMessage(replyToken, msg)
   }
 }
 
