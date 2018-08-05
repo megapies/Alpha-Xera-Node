@@ -1,5 +1,6 @@
 const Replyer = require('../helpers/replyer')
 const command = /^xera /
+const consolers = require('./consoler')
 
 class FightingCommander{
   
@@ -14,10 +15,13 @@ class FightingCommander{
     const replyToken = event.replyToken
     // const food = 'ผัดกระเพรา'
     const msg = `xera operation complete`
-    console.log('event.message', event.message)
     const token = this.tokenize(event.message.text)
-    console.log(token)
     await Replyer.replyMessage(replyToken, msg)
+    if(consoler[token.command])
+      await consolers[token.command].operate({
+        event,
+        token
+      })
   }
 
   tokenize(message){

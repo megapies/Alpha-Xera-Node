@@ -3,10 +3,9 @@ class AlertConsoler{
 
   }
 
-  setAlert({
-    date,
-    message,
-    source
+  async operate({
+    event,
+    token
   }){
 
   }
@@ -14,5 +13,6 @@ class AlertConsoler{
 
 module.exports = {
   staticClass: AlertConsoler,
-  consoler: AlertConsoler
+  consoler: AlertConsoler,
+  command: 'alert'
 }
