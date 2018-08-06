@@ -20,6 +20,6 @@ class AlertConsoler{
 
 module.exports = {
   staticClass: AlertConsoler,
-  consoler: AlertConsoler,
+  consoler: new AlertConsoler(),
   command: 'alert'
 }
