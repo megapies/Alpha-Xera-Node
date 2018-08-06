@@ -1,3 +1,5 @@
+const Pusher = require('../../helpers/pusher')
+const schedule = require('node-schedule')
 class AlertConsoler{
   constructor(){
 
@@ -7,7 +9,12 @@ class AlertConsoler{
     event,
     token
   }){
-
+    const date = new Date(token.params[0])
+    const msg = token.params[1]
+    const job = schedule.scheduledJob(date, function(){
+      console.log(msg)
+    })
+    console.log(date, job)
   }
 }
 
