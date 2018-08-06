@@ -7,7 +7,7 @@ class EchoConsoler{
     const msg = token.params[0]
     await Pusher.pushMessage(event.source, [{
       type: 'text',
-      text: msg + '-push'
+      text: msg
     }])
   }
 }
