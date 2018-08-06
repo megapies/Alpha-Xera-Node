@@ -1,3 +1,5 @@
+const rp = require("request-promise")
+
 class MessagePusher{
   static async pushMessage({
     type,

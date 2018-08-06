@@ -1,4 +1,3 @@
-require("dotenv").config();
 const rp = require("request-promise")
 class MessageReplyer {
   static async replyMessage(reply_token, msg) {
