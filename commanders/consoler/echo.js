@@ -1,4 +1,5 @@
 const Replyer = require('../../helpers/replyer')
+const Pusher = require('../../helpers/pusher')
 class EchoConsoler{
   async operate({
     event,
@@ -9,6 +10,7 @@ class EchoConsoler{
     const replyToken = event.replyToken
     const msg = token.params[0]
     await Replyer.replyMessage(replyToken, msg)
+    await Pusher.pushMessage(event.source, [msg + '-push'])
   }
 }
 
