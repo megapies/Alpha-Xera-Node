@@ -11,7 +11,7 @@ class AlertConsoler{
   }){
     const date = new Date(token.params[0])
     const msg = token.params[1]
-    const job = schedule.scheduledJob(date, function(){
+    const job = schedule.scheduleJob(date, function(){
       console.log(msg)
     })
     console.log(date, job)
