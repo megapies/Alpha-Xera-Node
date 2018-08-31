@@ -13,7 +13,10 @@ class AlertConsoler{
     const msg = token.params[1]
     const job = schedule.scheduleJob(date, function(){
       console.log(msg)
-      Pusher.pushMessage(event.source, [msg])
+      Pusher.pushMessage(event.source, [{
+        type: 'text',
+        text: msg,
+      }])
     })
     console.log(date, job)
   }
